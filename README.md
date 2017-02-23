@@ -1,5 +1,7 @@
 # debianized-pypi-mold
 
+:construction: **WORK IN PROGRESS**
+
 A [cookiecutter](http://cookiecutter.readthedocs.io/) template to
 make a Debian package from any existing PyPI release.
 It creates a self-contained Python virtualenv wrapped into a Debian package
