@@ -1,0 +1,16 @@
+[Unit]
+Description={{ cookiecutter.pypi_package }} Service
+After=network.target
+#Requires={{ cookiecutter.pypi_package }}-worker.service
+#Requires={{ cookiecutter.pypi_package }}-cron.service
+
+[Service]
+Type=simple
+User={{ cookiecutter.pypi_package }}
+Group=daemon
+WorkingDirectory=/var/opt/{{ cookiecutter.pypi_package }}
+EnvironmentFile=/etc/default/{{ cookiecutter.pypi_package }}
+ExecStart=/usr/sbin/{{ cookiecutter.pypi_package }}-launcher
+
+[Install]
+WantedBy=multi-user.target

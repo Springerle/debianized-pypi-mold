@@ -1,0 +1,5 @@
+# Environment file for systemd units and cron jobs
+{{ cookiecutter.pypi_package.upper() }}_CONFDIR=/etc/{{ cookiecutter.pypi_package }}
+
+# Global logging level. Use wisely. [DEBUG|INFO|WARNING|ERROR|CRITICAL|FATAL]
+{{ cookiecutter.pypi_package.upper() }}_LOGLEVEL=INFO

@@ -1,0 +1,3 @@
+etc/config.yml etc/{{ cookiecutter.pypi_package }}
+scripts/{{ cookiecutter.pypi_package }}-* usr/sbin
+systemd/*.service lib/systemd/system

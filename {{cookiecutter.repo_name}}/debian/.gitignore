@@ -1,0 +1,7 @@
+debhelper-build-stamp
+files
+*.debhelper
+*.substvars
+sdist/
+{{ cookiecutter.pypi_package }}/
+{{ cookiecutter.pypi_package }}-*.*.*/

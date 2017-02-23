@@ -1,0 +1,1 @@
+opt/venvs/{{ cookiecutter.pypi_package }}/bin/{{ cookiecutter.pypi_package }} usr/bin/{{ cookiecutter.pypi_package }}

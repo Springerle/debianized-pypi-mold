@@ -1,0 +1,10 @@
+#! /bin/bash
+#
+# Helper to launch the service with activated virtualenv.
+#
+# The virtualenv needs to be active for uWSGI to work properly.
+
+. /etc/default/{{ cookiecutter.pypi_package }}
+. /opt/venvs/{{ cookiecutter.pypi_package }}/bin/activate
+
+/usr/bin/{{ cookiecutter.pypi_package }} start

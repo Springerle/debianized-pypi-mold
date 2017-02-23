@@ -1,0 +1,5 @@
+{{ cookiecutter.pypi_package }} ({{ cookiecutter.pypi_version }}-1~~dev1~jessie) jessie; urgency=low
+
+  * Initial release of "{{ cookiecutter.repo_name }}"
+
+ -- {{ cookiecutter.full_name }} <{{ cookiecutter.email }}>  WWW, DD MMM YYYY HH:MM:SS +TTTT
