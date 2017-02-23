@@ -1,0 +1,13 @@
+{
+    "pypi_package": "foobar"
+  , "pypi_version": "1.2.3"
+  , "distro": "UNRELEASED"
+  , "year": "2017"
+  , "full_name": "Joe Schmoe"
+  , "github_username": "jschmoe"
+  , "email": "{{github_username}}@example.com"
+  , "repo_name": "debianized-{{pypi_package}}"
+  , "url": "https://github.com/{{github_username}}/{{repo_name}}"
+  , "short_description": "A Python package and its dependencies packaged up as DEB in an isolated virtualenv."
+  , "snake": "/usr/bin/python2"
+}
