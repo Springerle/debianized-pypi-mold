@@ -8,6 +8,6 @@
   , "email": "{{ cookiecutter.github_username }}@example.com"
   , "repo_name": "debianized-{{ cookiecutter.pypi_package }}"
   , "url": "https://github.com/{{ cookiecutter.github_username }}/{{  cookiecutter.repo_name }}"
-  , "short_description": "{{ cookiecutter.pypi_package }} packaged into a virtualenv."
+  , "short_description": "{{ cookiecutter.pypi_package }} packaged into a virtualenv"
   , "snake": "/usr/bin/python2"
 }
