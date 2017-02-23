@@ -5,9 +5,9 @@
   , "year": "2017"
   , "full_name": "Joe Schmoe"
   , "github_username": "jschmoe"
-  , "email": "{{github_username}}@example.com"
-  , "repo_name": "debianized-{{pypi_package}}"
-  , "url": "https://github.com/{{github_username}}/{{repo_name}}"
-  , "short_description": "{{pypi_package}} packaged into a virtualenv."
+  , "email": "{{ cookiecutter.github_username }}@example.com"
+  , "repo_name": "debianized-{{ cookiecutter.pypi_package }}"
+  , "url": "https://github.com/{{ cookiecutter.github_username }}/{{  cookiecutter.repo_name }}"
+  , "short_description": "{{ cookiecutter.pypi_package }} packaged into a virtualenv."
   , "snake": "/usr/bin/python2"
 }
