@@ -7,9 +7,6 @@ It creates a self-contained Python virtualenv wrapped into a Debian package
 The packaged virtualenv is kept in sync with the host's interpreter automatically.
 See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more details.
 
-The license used for the packaging project is “BSD 3-clause”, change the ``LICENSE``
-file and “BSD” references in ``README.md`` as needed.
-
  [![Groups](https://img.shields.io/badge/Google_groups-springerle--users-orange.svg)](https://groups.google.com/forum/#!forum/springerle-users)
  ![MIT licensed](http://img.shields.io/badge/license-MIT-red.svg)
 
@@ -40,5 +37,8 @@ Do that before any additional files are generated, that you don't want to have i
 Next check *all* the files for necessary changes regarding the software your're packaging.
 The template makes some assumptions that often fit, but there's always some differences in details.
 Delete anything you do not need, e.g. from the list of build dependencies.
+
+The license used for the packaging project is “BSD 3-clause”, change the ``LICENSE``
+file and “BSD” references in ``README.md`` and ``setup.py`` as needed.
 
 See the template's README for more information on how to actually build the DEB package.
