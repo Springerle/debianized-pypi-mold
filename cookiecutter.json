@@ -1,6 +1,6 @@
 {
-    "pypi_package": "foobar"
-  , "pypi_version": "1.2.3"
+    "pypi_package": "realms-wiki"
+  , "pypi_version": "0.9.3"
   , "distro": "UNRELEASED"
   , "year": "2017"
   , "full_name": "Joe Schmoe"
@@ -8,6 +8,6 @@
   , "email": "{{github_username}}@example.com"
   , "repo_name": "debianized-{{pypi_package}}"
   , "url": "https://github.com/{{github_username}}/{{repo_name}}"
-  , "short_description": "A Python package and its dependencies packaged up as DEB in an isolated virtualenv."
+  , "short_description": "{{pypi_package}} packaged into a virtualenv."
   , "snake": "/usr/bin/python2"
 }
