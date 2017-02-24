@@ -8,7 +8,9 @@
 
  * [What is this?](#what-is-this)
  * [How to build and install the package](#how-to-build-and-install-the-package)
- * [How to set up a simple "{{ cookiecutter.pypi_package }}" instance](#how-to-set-up-a-simple-{{ cookiecutter.pypi_package }}-instance)
+ * [How to set up a simple service instance](#how-to-set-up-a-simple-service-instance)
+ * [Trouble-Shooting](#trouble-shooting)
+   * ['pkg-resources not found' or similar during virtualenv creation](#pkg-resources-not-found-or-similar-during-virtualenv-creation)
  * [Configuration Files](#configuration-files)
  * [Data Directories](#data-directories)
  * [References](#references)
@@ -90,7 +92,7 @@ To list the installed version of `{{ cookiecutter.pypi_package }}` and all its d
 ```
 
 
-## How to set up a simple "{{ cookiecutter.pypi_package }}" instance
+## How to set up a simple service instance
 
 **TODO** Link to packaged project's documentation, and adapt the text below as needed!
 
@@ -113,6 +115,23 @@ Note that the ``{{ cookiecutter.pypi_package }}`` user is not removed when purgi
 but the ``/var/{log,opt}/{{ cookiecutter.pypi_package }}`` directories and the configuration are.
 
 After an upgrade, the services restart automatically by default,
+
+
+## Trouble-Shooting
+
+### 'pkg-resources not found' or similar during virtualenv creation
+
+If you get errors regarding ``pkg-resources`` during the virtualenv creation,
+update your build machine's ``pip`` and ``virtualenv``.
+The versions on many distros are just too old to handle current infrastructure (especially PyPI).
+
+This is the one exception to “never sudo pip”, so go ahead and do this:
+
+```sh
+sudo pip install -U pip virtualenv
+```
+
+Then try building the package again.
 
 
 ## Configuration Files
