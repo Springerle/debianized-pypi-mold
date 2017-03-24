@@ -1,7 +1,8 @@
 # debianized-pypi-mold
 
 A [cookiecutter](http://cookiecutter.readthedocs.io/) template to
-make a Debian package from an existing PyPI or private repository release.
+make a Debian package from an application's existing Python package
+as released to PyPI or a private repository.
 It creates a project to build a self-contained Python virtualenv wrapped into a Debian package
 (an "omnibus" package, all passengers on board).
 The packaged virtualenv is kept in sync with the host's interpreter automatically.
