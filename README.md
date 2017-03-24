@@ -2,7 +2,7 @@
 
 A [cookiecutter](http://cookiecutter.readthedocs.io/) template to
 make a Debian package from an existing PyPI or private repository release.
-It creates a self-contained Python virtualenv wrapped into a Debian package
+It creates a project to build a self-contained Python virtualenv wrapped into a Debian package
 (an "omnibus" package, all passengers on board).
 The packaged virtualenv is kept in sync with the host's interpreter automatically.
 See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more details.
