@@ -6,7 +6,9 @@ as released to PyPI or a private repository.
 It creates a project to build a self-contained Python virtualenv wrapped into a Debian package
 (an "omnibus" package, all passengers on board).
 The packaged virtualenv is kept in sync with the host's interpreter automatically.
-See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more details.
+
+See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more details,
+and [1and1/debianized-sentry](https://github.com/1and1/debianized-sentry) for an example project.
 
  [![Groups](https://img.shields.io/badge/Google_groups-springerle--users-orange.svg)](https://groups.google.com/forum/#!forum/springerle-users)
  ![MIT licensed](http://img.shields.io/badge/license-MIT-red.svg)
