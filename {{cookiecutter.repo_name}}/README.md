@@ -134,6 +134,33 @@ sudo pip install -U pip virtualenv
 Then try building the package again.
 
 
+## Changing the Service Unit Configuration
+
+The best way to change or augment the configuration of a *systemd* service
+is to use a ‘drop-in’ file.
+For example, to increase the limit for open file handles
+above the system defaults, use this in a **``root``** shell:
+
+```sh
+unit='{{ cookiecutter.pypi_package }}'
+
+# Change max. number of open files for ‘$unit’…
+mkdir -p /etc/systemd/system/$unit.service.d
+cat >/etc/systemd/system/$unit.service.d/limits.conf <<'EOF'
+[Service]
+LimitNOFILE=8192
+EOF
+
+systemctl daemon-reload
+systemctl restart $unit
+
+# Check that the changes are effective…
+systemctl cat $unit
+let $(systemctl show $unit -p MainPID)
+cat "/proc/$MainPID/limits" | egrep 'Limit|files'
+```
+
+
 ## Configuration Files
 
  * ``/etc/default/{{ cookiecutter.pypi_package }}`` – Operational parameters like global log levels.
