@@ -10,4 +10,5 @@
   , "url": "https://github.com/{{ cookiecutter.github_username }}/{{  cookiecutter.repo_name }}"
   , "short_description": "{{ cookiecutter.pypi_package }} packaged into a virtualenv"
   , "snake": "/usr/bin/python2"
+  , "use_py3": "false"
 }
