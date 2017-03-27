@@ -9,6 +9,8 @@ Build-Depends: debhelper (>= 9), python, dh-virtualenv (>= 1.0),
     libssl-dev, libsasl2-dev, libldap2-dev
 Standards-Version: 3.9.5
 Homepage: {{ cookiecutter.url }}
+#Vcs-Git: {{ cookiecutter.url }}.git
+#Vcs-Browser: {{ cookiecutter.url }}
 
 Package: {{ cookiecutter.pypi_package }}
 Architecture: any
@@ -17,5 +19,5 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: {{ cookiecutter.short_description }}.
     .
     This is a self-contained Python virtualenv wrapped into a Debian package
-    (an "omnibus" package, all passengers on board). The packaged virtualenv 
+    (an "omnibus" package, all passengers on board). The packaged virtualenv
     is kept in sync with the host's interpreter automatically.
