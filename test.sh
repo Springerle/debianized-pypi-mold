@@ -36,7 +36,7 @@ cd "$prjname"
 dch -r ""
 
 # Build the package
-dpkg-buildpackage -uc -us -b
+dpkg-buildpackage -uc -us
 cd ..
 
 # Check the package
