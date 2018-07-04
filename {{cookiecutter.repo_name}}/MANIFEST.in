@@ -12,5 +12,6 @@ prune debian/{{ cookiecutter.pypi_package }}
 recursive-include etc *
 recursive-include scripts *
 recursive-include systemd *.service
+recursive-include docs/_static/img *.md *.png *.svg *.graphml
 
 global-exclude *~ *.swp *debhelper* *.substvars files
