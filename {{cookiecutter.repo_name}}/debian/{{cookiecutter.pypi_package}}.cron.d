@@ -4,7 +4,7 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root@localhost
 
-# REMOVE THE : BEFORE THE /usr/bin COMMAND TO ACTUALLY RUN THE JOB!
+# TODO: REMOVE THE : BEFORE THE /usr/bin COMMAND TO ACTUALLY RUN THE JOB!
 # Also adapt the arguments to the task at hand.
 # Or simply remove this file.
 

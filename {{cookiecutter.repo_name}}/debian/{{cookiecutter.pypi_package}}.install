@@ -1,3 +1,4 @@
 etc/config.yml etc/{{ cookiecutter.pypi_package }}
+etc/default/{{ cookiecutter.pypi_package }} etc/default
 scripts/{{ cookiecutter.pypi_package }}-* usr/sbin
 systemd/*.service lib/systemd/system
