@@ -17,6 +17,7 @@
 
     .. _`GitHub README`: {{ cookiecutter.url }}
 """
+import io
 import os
 import re
 import sys
@@ -26,6 +27,11 @@ import textwrap
 import subprocess
 
 try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
+try:
     from setuptools import setup
 except ImportError as exc:
     raise RuntimeError("setuptools is missing ({1})".format(exc))
@@ -33,25 +39,36 @@ except ImportError as exc:
 
 # get external project data (and map Debian version semantics to PEP440)
 pkg_version = subprocess.check_output("parsechangelog | grep ^Version:", shell=True)
-upstream_version, maintainer_version = pkg_version.split()[1].split('~', 1)[0].split('-', 1)
+upstream_version, maintainer_version = pkg_version.split()[1].rsplit('~', 1)[0].split('-', 1)
 maintainer_version = maintainer_version.replace('~~rc', 'rc').replace('~~dev', '.dev')
 pypi_version = upstream_version + '.' + maintainer_version
 
-with open('debian/control') as control_file:
-    deb_source = rfc822.Message(control_file)
-    deb_binary = rfc822.Message(control_file)
+with io.open('debian/control', encoding='utf-8') as control_file:
+    data = [x for x in control_file.readlines() if not x.startswith('#')]
+    control_cleaned = StringIO(''.join(data))
+    deb_source = rfc822.Message(control_cleaned)
+    deb_binary = rfc822.Message(control_cleaned)
+
+try:
+    doc_string = __doc__.decode('utf-8')
+except (UnicodeDecodeError, AttributeError):
+    doc_string = __doc__
 
 maintainer, email = re.match(r'(.+) <([^>]+)>', deb_source['Maintainer']).groups()
 desc, long_desc = deb_binary['Description'].split('.', 1)
-desc, pypi_desc = __doc__.split('\n', 1)
+desc, pypi_desc = doc_string.split('\n', 1)
 long_desc = textwrap.dedent(pypi_desc) + textwrap.dedent(long_desc).replace('\n.\n', '\n\n')
 dev_status = 'Development Status :: 5 - Production/Stable'
 
 # Check for pre-release versions like "1.2-3~~rc1~distro"
 if '~~rc' in pkg_version or '~~dev' in pkg_version:
-    rc_tag = pkg_version.split('~')[-1].split('~')[0].split('-')[0]
-    upstream_version += rc_tag
-    pypi_version += rc_tag
+    rc_tag = re.match('.*~~([a-z0-9]+).*', pkg_version).group(1)
+    if rc_tag.startswith('dev'):
+        rc_tag = '.' + rc_tag
+    if rc_tag not in upstream_version:
+        upstream_version += rc_tag
+    if rc_tag not in pypi_version:
+        pypi_version += rc_tag
     dev_status = 'Development Status :: 4 - Beta'
 
 # build setuptools metadata
