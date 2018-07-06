@@ -41,6 +41,10 @@ Do that before any additional files are generated, that you don't want to have i
 Next check *all* the files for necessary changes regarding the software your're packaging.
 The template makes some assumptions that often fit, but there's always some differences in details.
 Delete anything you do not need, e.g. from the list of build dependencies.
+Search for ``TODO`` to make sure you did not overlook things that typically have to be changed.
+
+For *Python3*, you should look into the files ``debian/control`` and ``debian/*.triggers``,
+and adapt them accordingly.
 
 The license used for the packaging project is “BSD 3-clause”, change the ``LICENSE``
 file and “BSD” references in ``README.md`` and ``setup.py`` as needed.
