@@ -33,7 +33,7 @@ except ImportError as exc:
 
 # get external project data (and map Debian version semantics to PEP440)
 pkg_version = subprocess.check_output("parsechangelog | grep ^Version:", shell=True)
-upstream_version, maintainer_version = pkg_version.split()[1].rsplit('~', 1)[0].split('-', 1)
+upstream_version, maintainer_version = pkg_version.split()[1].split('~', 1)[0].split('-', 1)
 maintainer_version = maintainer_version.replace('~~rc', 'rc').replace('~~dev', '.dev')
 pypi_version = upstream_version + '.' + maintainer_version
 
@@ -45,7 +45,14 @@ maintainer, email = re.match(r'(.+) <([^>]+)>', deb_source['Maintainer']).groups
 desc, long_desc = deb_binary['Description'].split('.', 1)
 desc, pypi_desc = __doc__.split('\n', 1)
 long_desc = textwrap.dedent(pypi_desc) + textwrap.dedent(long_desc).replace('\n.\n', '\n\n')
+dev_status = 'Development Status :: 5 - Production/Stable'
 
+# Check for pre-release versions like "1.2-3~~rc1~distro"
+if '~~rc' in pkg_version or '~~dev' in pkg_version:
+    rc_tag = pkg_version.split('~')[-1].split('~')[0].split('-')[0]
+    upstream_version += rc_tag
+    pypi_version += rc_tag
+    dev_status = 'Development Status :: 4 - Beta'
 
 # build setuptools metadata
 project = dict(
@@ -60,8 +67,7 @@ project = dict(
     classifiers=[
         # Details at http://pypi.python.org/pypi?:action=list_classifiers
         'Development Status :: 3 - Alpha',
-        #'Development Status :: 4 - Beta',
-        #'Development Status :: 5 - Production/Stable',
+        #dev_status,
         'Intended Audience :: Information Technology',
         'License :: OSI Approved :: BSD License',
         'Operating System :: POSIX :: Linux',
