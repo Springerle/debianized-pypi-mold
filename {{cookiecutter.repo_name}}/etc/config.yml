@@ -1,4 +1,6 @@
 # A YAML confihuration file that the service might use...
+#
+# THIS IS JUST AN EXAMPLE THAT THE TEMPLATE PROVIDES TO SHOW CONFIG FILE HANDLING.
 
 # The ``redis.clusters`` setting is used, unsurprisingly, to configure Redis
 # clusters. These clusters can be then referred to by name when configuring
