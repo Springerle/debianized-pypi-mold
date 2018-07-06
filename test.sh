@@ -34,6 +34,7 @@ echo
 
 cd "$prjname"
 dch -r ""
+sed -i -re 's/~~dev1//' debian/changelog
 
 # Build the package
 dpkg-buildpackage -uc -us
@@ -57,6 +58,8 @@ EOF
 
 
 # Yay!
+echo
+dpkg-deb -I $deb
 echo
 echo "*** ALL OK ***"
 # end of integration test
