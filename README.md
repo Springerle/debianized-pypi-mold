@@ -34,7 +34,8 @@ cd ‹projectname›
 dch -r "" # add a proper distro and date to the changelog
 ```
 
-It makes sense to `git init` the created directory directly afterwards, and ``git add`` all files.
+It makes sense to `git init` the created directory directly afterwards, and ``git add`` all files,
+so that you have the template version of files saved in the git staging area.
 Do that before any additional files are generated, that you don't want to have in your repository.
 
 Next check *all* the files for necessary changes regarding the software your're packaging.
