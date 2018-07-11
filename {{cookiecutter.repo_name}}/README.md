@@ -95,7 +95,7 @@ sudo dpkg -i ../{{ cookiecutter.pypi_package }}_*.deb
 To list the installed version of `{{ cookiecutter.pypi_package }}` and all its dependencies, call this:
 
 ```sh
-/opt/venvs/{{ cookiecutter.pypi_package }}/bin/pip freeze | less
+/opt/venvs/{{ cookiecutter.pypi_package }}/bin/pip freeze | column
 ```
 
 
