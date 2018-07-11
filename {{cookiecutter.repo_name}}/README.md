@@ -1,8 +1,8 @@
 # "{{ cookiecutter.pypi_package }}" Debian Packaging
 
-![BSD 3-clause licensed](http://img.shields.io/badge/license-BSD_3--clause-red.svg)
-[![{{ cookiecutter.repo_name }}](http://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/)
-[![{{ cookiecutter.pypi_package }}](http://img.shields.io/pypi/v/{{ cookiecutter.pypi_package }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.pypi_package }}/)
+![BSD 3-clause licensed](https://img.shields.io/badge/license-BSD_3--clause-red.svg)
+[![{{ cookiecutter.repo_name }}](https://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/)
+[![{{ cookiecutter.pypi_package }}](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_package }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.pypi_package }}/)
 
 **Contents**
 

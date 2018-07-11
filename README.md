@@ -11,7 +11,7 @@ See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more d
 and [1and1/debianized-sentry](https://github.com/1and1/debianized-sentry) for an example project.
 
  [![Groups](https://img.shields.io/badge/Google_groups-springerle--users-orange.svg)](https://groups.google.com/forum/#!forum/springerle-users)
- ![MIT licensed](http://img.shields.io/badge/license-MIT-red.svg)
+ ![MIT licensed](https://img.shields.io/badge/license-MIT-red.svg)
 
 The similar [dh-virtualenv-mold](https://github.com/Springerle/dh-virtualenv-mold)
 adds packaging metadata to an existing Python project under your control.
