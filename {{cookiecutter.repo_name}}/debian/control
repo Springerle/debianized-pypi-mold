@@ -2,7 +2,7 @@ Source: {{ cookiecutter.pypi_package }}
 Section: contrib/python
 Priority: extra
 Maintainer: {{ cookiecutter.full_name }} <{{ cookiecutter.email }}>
-Build-Depends: debhelper (>= 9), python3, dh-virtualenv (>= 1.1),
+Build-Depends: debhelper (>= 9), python3, python3-venv, dh-virtualenv (>= 1.1),
     curl, tar, gzip, lsb-release,
     python3-setuptools, python3-pip, python3-dev, libffi-dev,
     libxml2-dev, libxslt1-dev, libyaml-dev, libjpeg-dev,
@@ -14,7 +14,7 @@ Homepage: {{ cookiecutter.url }}
 
 Package: {{ cookiecutter.pypi_package }}
 Architecture: any
-Pre-Depends: dpkg (>= 1.16.1), python3, ${misc:Pre-Depends}
+Pre-Depends: dpkg (>= 1.16.1), python3, python3-venv, ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 ## TODO delete if not needed...
 ##Suggests: redis-server, postgresql
